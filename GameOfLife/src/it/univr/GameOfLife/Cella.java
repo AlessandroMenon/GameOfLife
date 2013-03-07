@@ -38,7 +38,7 @@ public class Cella extends JLabel {
         this.posX = posX;
         this.posY = posY;
         this.statoCella = 1;     //All'inizio lo statoCella della cella è morta
-        this.vicini = vicini;
+        this.vicini = vicini;	 // e anche la lista dei vicini è vuota (null)
         this.setBorder(BorderFactory.createLineBorder(new Color(100, 100, 100)));
         this.setOpaque(true);
         this.setBackground(Color.BLACK);
@@ -116,17 +116,17 @@ public class Cella extends JLabel {
     public void setStatoCella(int statoCella) {
 
         if (statoCella == 1) {
-            this.setBackground(Color.BLACK);
+            this.setBackground(Color.BLACK);     // La cella morta = colore nero
             this.statoCella = statoCella;
         }
         if (statoCella == 2) {
             if (!(isAlwaysDead())) {
-                this.setBackground(Color.GREEN);
+                this.setBackground(Color.GREEN); // La cella viva = colore verde
                 this.statoCella = statoCella;
             }
         }
         if (statoCella == 3) {
-            this.setBackground(Color.WHITE);
+            this.setBackground(Color.WHITE); // La cella sempremorta = colore bianco
             this.statoCella = statoCella;
         }
     }
@@ -179,6 +179,6 @@ public class Cella extends JLabel {
                 break;
         }
         
-        return (out += "- Posizione : " + " x = " + this.posX + " y = " + this.posY);
+        return (out + "- Posizione : " + " x = " + this.posX + " y = " + this.posY);
     }
 }

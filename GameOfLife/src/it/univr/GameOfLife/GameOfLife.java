@@ -81,7 +81,7 @@ public class GameOfLife extends JFrame {
      */
     private final void initGUI(String title) {
         this.setTitle(title);
-        this.matrix = new Matrix(this);
+        matrix = new Matrix(this);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBounds(200, 0, 900, 650);
         this.setResizable(false);
@@ -116,7 +116,6 @@ public class GameOfLife extends JFrame {
         start.addActionListener(new ActionListener() {
             /**
              * Gestisce gli eventi dovuti alla pressione del JButton start
-             * @param arg0 - ActionListener da aggiungere
              */
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -134,7 +133,6 @@ public class GameOfLife extends JFrame {
         stop.addActionListener(new ActionListener() {
             /**
              * Gestisce gli eventi dovuti alla pressione del JButton stop
-             * @param arg0 - ActionListener da aggiungere
              */
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -153,7 +151,6 @@ public class GameOfLife extends JFrame {
         clear.addActionListener(new ActionListener() {
             /**
              * Gestisce gli eventi dovuti alla pressione del JButton clear
-             * @param arg0 - ActionListener da aggiungere
              */
             @Override
             public void actionPerformed(ActionEvent arg0) {

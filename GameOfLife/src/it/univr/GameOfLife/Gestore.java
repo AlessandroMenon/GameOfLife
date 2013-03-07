@@ -27,6 +27,10 @@ public class Gestore extends Thread {
 	 * Numero di thread utilizzati
 	 */
     private int numberOfThread;
+    /**
+     * flag per far partire o fermare il thread
+     */
+    private boolean threadWork;
 
 
     /**
@@ -39,6 +43,7 @@ public class Gestore extends Thread {
         this.matrix = matrix;
         this.slider = slider;
         this.numberOfThread = numberOfThread;
+        threadWork = true;
 
     }
 
@@ -48,7 +53,7 @@ public class Gestore extends Thread {
 	 */
     @Override
     public void run() {
-        while (true) {
+        while (threadWork) {
          //   long startTime = System.currentTimeMillis();
             nextScan(numberOfThread);
             try {
@@ -65,7 +70,7 @@ public class Gestore extends Thread {
 	 * Ferma il thread Gestore
 	 */
     public void stopGestore() {
-        this.stop();
+        threadWork = false;
     }
 
 	/**
